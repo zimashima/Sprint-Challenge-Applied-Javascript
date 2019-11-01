@@ -8,8 +8,13 @@
 //  The tab component should look like this:
 //    <div class="tab">topic here</div>
 
-//copy api data from the link so that i wouldn't break the link
-const newsTopics = {"topics":["javascript","bootstrap","technology","jquery","node.js"]}
+
+axios.get('https://lambda-times-backend.herokuapp.com/topics')
+    .then( response =>{
+        Object.values(response.data)[0].forEach(topic=>{
+            document.querySelector('.topics').appendChild(NewTab(topic))
+    })
+})
 
 function NewTab(topic){
 
@@ -20,14 +25,5 @@ function NewTab(topic){
     return aTab
 }
 
-// axios.get('https://lambda-times-backend.herokuapp.com/topics')
-//     .then( response =>{
-//         Object.values(response.data)[0].forEach(topic=>{
-//             document.querySelector('.topics').appendChild(NewTab(topic))
-//     })
-// })
 
-Object.values(newsTopics)[0].forEach(topic =>{
-    document.querySelector('.topics').appendChild(NewTab(topic))
-})
-//will be using copy data to avoid breaking the API
+
