@@ -23,7 +23,7 @@ function Header() {
     headerLambdaTimes.textContent = "Lambda Times"
 
     const spanTemp = document.createElement('span')
-    spanTemp.textContent = "98 &deg;"
+    spanTemp.textContent = "98"
     spanTemp.classList.add('temp')
 
     //structure
