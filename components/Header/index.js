@@ -11,6 +11,7 @@
 
 function Header() {
     
+    //define and added text
     const headerDiv = document.createElement('div')
     headerDiv.classList.add('header')
 
@@ -25,7 +26,7 @@ function Header() {
     spanTemp.textContent = "98 &deg;"
     spanTemp.classList.add('temp')
 
-
+    //structure
     headerDiv.appendChild(spanDate)
     headerDiv.appendChild(headerLambdaTimes)
     headerDiv.appendChild(spanTemp)
@@ -34,4 +35,5 @@ function Header() {
     
 }
 
+//added to header-container class
 document.querySelector('.header-container').appendChild(Header())
